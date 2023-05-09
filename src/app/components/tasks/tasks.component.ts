@@ -12,13 +12,8 @@ export class TasksComponent {
 
   constructor(private taskService: TaskService) {}
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe(
-      (tasks: Task[]) => {
-        this.tasks = tasks;
-      },
-      (error: any) => {
-        console.error(error);
-      }
-    );
+    this.taskService.getTasks().subscribe((tasks: Task[]) => {
+      this.tasks = tasks;
+    });
   }
 }
